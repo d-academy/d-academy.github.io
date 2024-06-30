@@ -20,7 +20,7 @@
                 <li><a href="index.html">Formations</a></li>
                 <li><a href="index.html">Services</a></li>
                 <li><a href="InscriptionForm.php" class="active">Sign In / Log In</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="contact.php">Contact</a></li>
                 <li><a href="AboutUs.html">About Us</a></li>
             </ul>
         </nav>
