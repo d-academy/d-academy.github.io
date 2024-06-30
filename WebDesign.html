@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+      .body {
+         font-family:Arial,sans-serif;
+         font-size:17px;
+         line-height: 1.6;
+       }
+       
+      a {
+         text-decoration: none;
+         color: inherit;
+         font: inherit;
+         width: fit-content;
+      }
+
+      .wrapper {
+         background-color: #f8f5f5;
+         padding: 60px 0 33px; 
+         margin: 60px 0 33px; 
+      }
+      .header {
+         font-family: 'Yeseva One', Verdana, sans-serif;
+         font-size: 60px;
+         line-height: 110%;
+         vertical-align: middle;
+         text-align: center;
+         background: linear-gradient(to right, #008cff, #DB545A);
+         -webkit-background-clip: text;
+         background-clip: text;
+         color: transparent;
+      }
+      
+      h1, .entry-content h1 {
+                   color: blue;
+                }
+
+      h3, .entry-content h3 {
+         color: blue;
+      }
+      
+      h4, .entry-content h4 {
+         color: blue;
+      }
+      .topbar {
+         background-color: rgb(103, 173, 200);
+         position: fixed;
+         top: 0;
+         left: 0;
+         right: 0;
+         height: 100px;
+         padding: 10px 0;
+         box-shadow: 10px 0 10px rgba(0, 0, 0, .5);
+         z-index: 3;
+      }
+
+      .logo {
+         font-size: 1.5rem;
+         font-weight: bold;
+         height: 33px;
+         float: left;
+         margin-left: 33px;
+      }
+
+      #menu-btn {
+         display: block;
+         position: absolute;
+         top: 66px;
+         right: 33px;
+         cursor: pointer;
+      }
+
+      .nav {
+         position: absolute;
+         display: flex;
+         flex-direction: column;
+         text-align: center;
+         list-style-type: none;
+         margin: 0 auto;
+         padding: 0 11px;
+         top: 124px;
+         left: calc(50% - 150px);
+         width: 300px;
+         opacity: 0;
+         transition: opacity 0.7s;
+      }
+
+      .nav a {    
+         font-size: 1rem;
+         text-decoration: none;
+         display: block;
+         width: auto;
+         border-radius: 23px;
+         margin: 3px 23px;
+         padding: 10px;
+         cursor: pointer;
+         color: #000;
+         background: rgb(103, 173, 200);
+      }
+
+      .nav a:hover{
+         transition: 0.5s;
+         background: rgb(152, 223, 253);
+         color: #ffffff;
+      }
+
+      .nav .active {
+         color: #fff;
+      }
+
+      .social {
+         position: absolute;
+         top: 17px;
+         right: 11px;
+      }
+
+      .LinkedIn, .Facebook, .x {
+         padding: 0 11px;
+         height: 25px;
+         width: auto;
+      }
+
+      .LinkedIn:hover, .Facebook:hover, .x:hover {
+         transform: scale(1.7)
+      }
+
+      footer {
+         font-family: 'Verdana';
+         font-style: normal;
+         font-weight: 400;
+         font-size: 23px;
+         height: auto;
+         background: #000;
+         color: white;
+         text-align: center;
+         box-shadow: 0 -1px 1em 3px rgba(0, 0, 0, .77);
+         box-sizing: border-box;
+      }
+
+      footer > p {
+         margin: 3px;
+         box-sizing: border-box;
+      }
+
+      span {
+         font-size: 27px;
+         font-weight: 500;
+         font-family: "Cardo", serif;
+         background: linear-gradient(to right, #008cff, #DB545A);
+         -webkit-background-clip: text;
+         background-clip: text;
+         color: transparent;
+         cursor: default;
+      }
+
+      .terms {
+         font-size: 17px;
+         padding: 3px;
+      }
+
+      .terms > a:hover {
+         text-decoration: underline;
+         color: #008cff;
+      }
+
+      @media only screen and (min-width: 992px) {
+          .topbar {
+            height: 100px;
+            display: flex;
+          }
+          #menu-btn {
+            display: none;
+          }
+          .nav {
+            top: inherit;
+            flex-direction: row;
+            width: calc(100% - 500px);
+            margin-block: 17px;
+            opacity: 1;
+          }
+          .nav a {
+            display: inline;
+            margin-inline: 9px;
+          } 
+          .nav a:hover{
+            border-radius: 23px;
+          }
+          .social {
+            top: 29px;
+          }
+          .LinkedIn, .Facebook, .x {
+            padding: 0 13px;
+            height: 25px;
+            width: auto;
+          }
+      }
+      @media only screen and (max-width: 576px) {
+         .topbar {height: 75px;}
+         .logo img {width: 75%;}
+         .social {display: none;}
+         #menu-btn{top: 19px;}
+         .nav {top: 77px;}
+         footer {
+            font-size: 23px;
+            line-height: 150%;
+         }
+         span {font-size: 27px;}
+         .terms > a:hover {
+            text-decoration: underline;
+            color: #008cff;
+         }
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Yeseva+One&display=swap" rel="stylesheet">
+    <title>Web Design</title>
+   </head>
+   <body>
+      <style type="text/css">
+         .body {
+             font-family:Arial,sans-serif;
+             font-size:15px;
+          }
+       </style>
+      <header class="container-fluid topbar">
+         <div class="logo">
+             <a href="index.html"><img src="img/13554290.png" alt="Logo"/></a>
+         </div>
+         <nav>
+             <div id="menu-btn"><img src="img/menu-btn.svg" height="33px"></div>
+             <ul class="nav">
+                 <li><a href="#courses" class="active">Formations</a></li>
+                 <li><a href="#services">Services</a></li>
+                 <li><a href="InscriptionForm.php">Sign In / Log In</a></li>
+                 <li><a href="#">Contact</a></li>
+                 <li><a href="#">About Us</a></li>
+             </ul>
+         </nav>
+         <div class="social">
+             <a href="#" title="LinkedIn" target="_blank"><img src="img/in.png" class="LinkedIn" title="LinkedIn"></a>
+             <a href="#" title="Facebook" target="_blank"><img src="img/fcb.png" class="Facebook"
+             title="Facebook"></a>
+             <a href="#" title="X" target="_blank"><img src="img/X.png" class="x" title="X"></a>
+        </div>
+      </header>
+      <section id="wrapper">
+         <div class="wrapper">
+            <h1 class="header">Web Design</h1>
+            <style type="text/css">
+               .wrapper {
+                   
+             background-color: #f8f5f5;
+             padding: 60px 0;
+             margin: 60px 0; 
+        
+                }
+                h1, .entry-content h1 {
+                   color: blue;
+                }
+               
+                h3, .entry-content h3 {
+                   color: blue;
+                }
+               
+                h4, .entry-content h4 {
+                   color: blue;
+                }
+             </style>
+            <h1><b>Formation Pratique en Graphic Design / Infographie à Digital Academy</b></h1>
+            <p>Vous souhaitez évoluer dans l’univers de la communication graphique ? Digital Academy vous propose une formation conçue par des professionnels du secteur, vous permettant d’apprendre l’ensemble des compétences nécessaires à votre futur métier. Logos, affiches, packagings… Notre formation Graphic Design à Douala fera de vous un professionnel de la communication visuelle, capable de répondre à l’ensemble des demandes de sa clientèle.
+
+                Grâce à nos cours pratiques et nos outils pédagogiques, vous apprendrez les enjeux des étapes de la chaîne graphique, vous développerez vos aptitudes à concevoir des messages et les finaliser avec les logiciels de DAO et vous déclinerez vos campagnes de communication sur tout type de support.
+                </p>
+                <h3>La formation en Infographie 2D à Douala
+                </h3>
+                <p>
+                    Digital Academy  vous propose ici une formation dont l’objectif est de former des Graphic Designers. Vous êtes passionné par le design graphique ? Envie de vous professionnaliser via l’acquisition de techniques offertes par les logiciels Graphique (Photoshop – Illustrator) ? Vous souhaitez être capable de créer des supports de qualité (Logo type – charte graphique – Flyers, carte de visite, banderole, roll up , panneaux , Magazine , journal ,Calendrier.) ? Un travail d’artiste avec les logiciels graphique désormais possible grâce à cette formation</p>
+                
+                <h3><b>Objectifs de la Formation en Infographie (Design Graphique)
+                </b></h3>
+                <p>Les objectifs principaux de cette formation qui se veut 90% pratique est de permettre aux apprenants de :
+                    <ul>
+                    <li>Comprendre le code couleur dans la création graphique</li>
+                    <li>Assimiler la notion de charte graphique</li>
+                    <li>Maîtriser l’écosystème du logiciel et maîtriser l’interface de Photoshop – Illustrator</li>
+                    <li>Prendre en main les outils Photoshop et les appliquer</li>
+                    <li>Acquérir une vision et une approche de designer graphique</li>
+                    <li>Structurer et équilibrer des supports de communication</li>
+                    <li> Créer des supports de communication de qualité</li>
+                </ul></p>
+                <h3><b>Ce que vous saurez faire à la fin de la Formation en Marketing Digital</b></h3>
+                <p>
+                    <ul>
+                      <li>Élaborer la stratégie de communication sur les réseaux sociaux</li>
+                      <li>Animer les communautés avec un discours de marque</li>
+                      <li>Lancer des campagnes de notoriété ou d’acquisition</li>
+                      <li>Auditer la E-réputation d’une marque</li>
+                      <li>Créer un plan marketing digital</li>
+                      <li> Définir une ligne éditoriale</li>
+                    <li>Créer des contenus riches de manière collaborative en respectant la charte éditoriale</li>
+                </ul></p>    
+               </div>
+      </section>
+      <section id="pub">
+         <div class="pub">
+            <h1><b>Le Métier en Infographie 2D/3D
+            </b></h1>
+            <p>La formation professionnelle en Infographie 2D 3D cours du jour ou du cours du soir à LocalHost Academy  Douala prépare l’étudiant à :
+               </p>
+               <p><ul>
+                  <li>créer des images animées à l’aide de logiciels</li>	
+                  <li>participer à la création de dessins animés, de jeux vidéo, de cédéroms ou de films d’animation, à faire de la communication visuelle.</li>	
+                  <li>Créer des supports publicitaire (carte de vœux, carte de visite, calendrier, badge, faire part etc…).</li>	
+                  
+               </ul>
+               La formation en infographie est indispensable pour le futur infographe partenaire incontournable des entreprises dans la mise en action de la stratégie de communication. L’infographe est le bras droit du responsable communication auquel il rend directement compte. Il est l’acteur qui permet à l’entreprise de se faire connaître auprès de ses potentiels clients et ainsi de faciliter la commercialisation de ses produits.
+
+L’ infographe est un graphiste en charge de concevoir un design graphique sur tous type de supports de communication.Il utilise les logiciels de type (Xpress, Illustrator, photoshop, et les logiciels de 3 D).
+
+ 
+                  </p>
+ <h1><b>Accompagnement et Coaching pendant votre Formation en Marketing Digital à Digital Academy</b></h1>
+            <p>Notre formation est très intensive. Alors pendant la formation, notre coach vous accompagne au cours d’ateliers collectifs et de suivi personnel :
+               Les ateliers collectifs en cours de formation permettent d‘apprendre des aptitudes de chacun afin d’améliorer ses compétences personnelles, de lever les freins éventuels pour bien apprendre et surtout pour garder la motivation même lorsque ça s’intensifie.
+               Les suivis individuels intermédiaires permettent d’échanger sur votre ressenti sur la formation (intégration dans la session, niveau d’autonomie perçue, degré d’avancement …) et de réaliser vos acquis et votre montée en compétences.
+               
+               </p>
+               <h1><b>MATÉRIEL DE FORMATION</b></h1>
+               <p>
+                Pour toute la durée de la formation, la structure met à la disposition de ses apprenants, les ressources suivantes :
+                  <ul>
+                     <li>alle de Cours VIP et  Climatisée 24h/24 ;</li>S
+                      <li>Des Blocs Notes et Stylos</li>
+                     <li>Des Laptops pour les Apprenants qui n’en ont pas (à reserver)</li>
+                     <li>White Board avec Marqueurs</li>
+                     <li>Salle de Travail en dehors des Cours</li>
+                     <li> Espace de détente et de relaxation</li>
+                     <li>Vidéoprojecteur et Ecran TV Smart</li>
+                  </ul>
+       
+               </p>
+               <h1><b>CERTIFICATION PRATIQUE & DÉBOUCHÉS</b></h1>
+               <p> 
+               En cas de réussite à la formation (Note finale supérieure ou égale à 12/20), tout participant recevra une Attestation de réussite dans un premier temps, puis une Certification Pratique dans le domaine de formation, valable au Cameroun et à l’international.
+Les lauréats bénéficieront également d’un suivi post formation de trois (03) mois dont l’objectif sera de s’assurer qu’ils ont atteint leurs objectifs de formation, et de leur apporter une aide supplémentaire allant dans ce sens.
+
+            </p>
+            <h1><b>CONSTITUTION DU DOSSIER D’ADMISSION</b></h1>
+            <p>
+               <ol>
+                  <li>Photocopie du Dernier diplôme</li>
+                  <li>Photocopie de la CNI ou de l’Acte de Naissance</li>
+                  <li>Frais d’inscription de 15.000F</li>
+                  <li>Formulaire d’inscription dûment rempli (A Retirer au Centre)</li>
+               </ol>
+            </p>
+
+            <h1><b>PROCÉDURE D’INSCRIPTION</b></h1>
+            <p>Êtes-vous intéressé par la Formation ? Il y a encore quelques places disponibles pour la prochaine rentrée
+                  Voici comment procéder pour participer à nos Formations :<ol>
+               <li>Vous rendre au Centre cette semaine muni des Éléments du Dossier d’Admission</li> 
+               <li>Proceder à votre inscription au Secretariat du Centre</li>
+               <li> Retirer votre reçu d’inscription</li>
+               
+            </ol>
+               
+            </p>
+            <h1><b>INSCRIPTION À DISTANCE POSSIBLE</b></h1>
+            <p>Vous pouvez également vous inscrire à distance, pour garantir votre place, c’est très simple :
+                  <ol>
+
+                  
+                     <li>Vous faites le paiement de vos frais d’inscription sur les contacts du Centre (694137315 / 671342262)</li>
+                     <li>Vous laissez un message sur WhatsApp (237694137315) avec votre nom complet et la formation choisie</li>
+                     <li>Vous recevrez une photo de votre reçu, et pourrez le retirer quand vous serez au centre.
+                     </li>
+                     
+                  </ol>
+               
+            </p>
+            </div>
+      </section>
+      <footer class="container-fluid footer text-center p-2">
+         <p>@Copyright <span>Digital Academy</span></p>
+         <p class="terms"><a href="#">Privacy Policy</a> - <a href="#">Terms&Conditions</a></p>
+         </footer>
+         <script>
+         let btn = document.querySelector('#menu-btn');
+   
+         btn.onclick = function() {
+   
+             const nav = document.querySelector('.nav');
+             const h1 = document.querySelector('#title');
+   
+             if(nav.style.opacity == 0){
+                 nav.style.opacity = 1;
+                 h1.style.opacity = 0;
+             } else {
+                 nav.style.opacity = 0;
+                 h1.style.opacity = 1;
+             };
+         }
+         </script>
+   </body>
+</html>

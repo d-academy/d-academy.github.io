@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+      .body {
+         font-family:Arial,sans-serif;
+         font-size:17px;
+         line-height: 1.6;
+       }
+       
+      a {
+         text-decoration: none;
+         color: inherit;
+         font: inherit;
+         width: fit-content;
+      }
+
+      .wrapper {
+         background-color: #f8f5f5;
+         padding: 60px 0 33px; 
+         margin: 60px 0 33px; 
+      }
+      .header {
+         font-family: 'Yeseva One', Verdana, sans-serif;
+         font-size: 60px;
+         line-height: 110%;
+         vertical-align: middle;
+         text-align: center;
+         background: linear-gradient(to right, #008cff, #DB545A);
+         -webkit-background-clip: text;
+         background-clip: text;
+         color: transparent;
+      }
+      
+      h1, .entry-content h1 {
+                   color: blue;
+                }
+
+      h3, .entry-content h3 {
+         color: blue;
+      }
+      
+      h4, .entry-content h4 {
+         color: blue;
+      }
+      .topbar {
+         background-color: rgb(103, 173, 200);
+         position: fixed;
+         top: 0;
+         left: 0;
+         right: 0;
+         height: 100px;
+         padding: 10px 0;
+         box-shadow: 10px 0 10px rgba(0, 0, 0, .5);
+         z-index: 3;
+      }
+
+      .logo {
+         font-size: 1.5rem;
+         font-weight: bold;
+         height: 33px;
+         float: left;
+         margin-left: 33px;
+      }
+
+      #menu-btn {
+         display: block;
+         position: absolute;
+         top: 66px;
+         right: 33px;
+         cursor: pointer;
+      }
+
+      .nav {
+         position: absolute;
+         display: flex;
+         flex-direction: column;
+         text-align: center;
+         list-style-type: none;
+         margin: 0 auto;
+         padding: 0 11px;
+         top: 124px;
+         left: calc(50% - 150px);
+         width: 300px;
+         opacity: 0;
+         transition: opacity 0.7s;
+      }
+
+      .nav a {    
+         font-size: 1rem;
+         text-decoration: none;
+         display: block;
+         width: auto;
+         border-radius: 23px;
+         margin: 3px 23px;
+         padding: 10px;
+         cursor: pointer;
+         color: #000;
+         background: rgb(103, 173, 200);
+      }
+
+      .nav a:hover{
+         transition: 0.5s;
+         background: rgb(152, 223, 253);
+         color: #ffffff;
+      }
+
+      .nav .active {
+         color: #fff;
+      }
+
+      .social {
+         position: absolute;
+         top: 17px;
+         right: 11px;
+      }
+
+      .LinkedIn, .Facebook, .x {
+         padding: 0 11px;
+         height: 25px;
+         width: auto;
+      }
+
+      .LinkedIn:hover, .Facebook:hover, .x:hover {
+         transform: scale(1.7)
+      }
+
+      footer {
+         font-family: 'Verdana';
+         font-style: normal;
+         font-weight: 400;
+         font-size: 23px;
+         height: auto;
+         background: #000;
+         color: white;
+         text-align: center;
+         box-shadow: 0 -1px 1em 3px rgba(0, 0, 0, .77);
+         box-sizing: border-box;
+      }
+
+      footer > p {
+         margin: 3px;
+         box-sizing: border-box;
+      }
+
+      span {
+         font-size: 27px;
+         font-weight: 500;
+         font-family: "Cardo", serif;
+         background: linear-gradient(to right, #008cff, #DB545A);
+         -webkit-background-clip: text;
+         background-clip: text;
+         color: transparent;
+         cursor: default;
+      }
+
+      .terms {
+         font-size: 17px;
+         padding: 3px;
+      }
+
+      .terms > a:hover {
+         text-decoration: underline;
+         color: #008cff;
+      }
+
+      @media only screen and (min-width: 992px) {
+          .topbar {
+            height: 100px;
+            display: flex;
+          }
+          #menu-btn {
+            display: none;
+          }
+          .nav {
+            top: inherit;
+            flex-direction: row;
+            width: calc(100% - 500px);
+            margin-block: 17px;
+            opacity: 1;
+          }
+          .nav a {
+            display: inline;
+            margin-inline: 9px;
+          } 
+          .nav a:hover{
+            border-radius: 23px;
+          }
+          .social {
+            top: 29px;
+          }
+          .LinkedIn, .Facebook, .x {
+            padding: 0 13px;
+            height: 25px;
+            width: auto;
+          }
+      }
+      @media only screen and (max-width: 576px) {
+         .topbar {height: 75px;}
+         .logo img {width: 75%;}
+         .social {display: none;}
+         #menu-btn{top: 19px;}
+         .nav {top: 77px;}
+         footer {
+            font-size: 23px;
+            line-height: 150%;
+         }
+         span {font-size: 27px;}
+         .terms > a:hover {
+            text-decoration: underline;
+            color: #008cff;
+         }
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Yeseva+One&display=swap" rel="stylesheet">
+    <title>Search Engine Optimisation </title>
+   </head>
+   <body>
+      <style type="text/css">
+         .body {
+             font-family:Arial,sans-serif;
+             font-size:15px;
+          }
+       </style>
+      <header class="container-fluid topbar">
+         <div class="logo">
+             <a href="index.html"><img src="img/13554290.png" alt="Logo"/></a>
+         </div>
+         <nav>
+             <div id="menu-btn"><img src="img/menu-btn.svg" height="33px"></div>
+             <ul class="nav">
+                 <li><a href="#courses" class="active">Formations</a></li>
+                 <li><a href="#services">Services</a></li>
+                 <li><a href="InscriptionForm.php">Sign In / Log In</a></li>
+                 <li><a href="#">Contact</a></li>
+                 <li><a href="#">About Us</a></li>
+             </ul>
+         </nav>
+         <div class="social">
+             <a href="#" title="LinkedIn" target="_blank"><img src="img/in.png" class="LinkedIn" title="LinkedIn"></a>
+             <a href="#" title="Facebook" target="_blank"><img src="img/fcb.png" class="Facebook"
+             title="Facebook"></a>
+             <a href="#" title="X" target="_blank"><img src="img/X.png" class="x" title="X"></a>
+        </div>
+      </header>
+      <section id="wrapper">
+         <div class="wrapper">
+            <h1 class="header">Search Engine Optimisation</h1>
+            <style type="text/css">
+               .wrapper {
+                   
+             background-color: #f8f5f5;
+             padding: 60px 0;
+             margin: 60px 0; 
+        
+                }
+                h1, .entry-content h1 {
+                   color: blue;
+                }
+               
+                h3, .entry-content h3 {
+                   color: blue;
+                }
+               
+                h4, .entry-content h4 {
+                   color: blue;
+                }
+             </style>
+            <h1><b>Formation en référencement naturel SEO au Cameroun</b></h1>
+            <p>Le référencement naturel, vous le savez, est la discipline qui s’attache à améliorer le positionnement des sites et des pages web dans les résultats des moteurs de recherche. Devenue incontournable à mesure qu’Internet s’est étendu, elle est pratiquée au quotidien par des millions de personnes aux quatre coins du globe. Et joue un rôle majeur dans la stratégie de visibilité digitale d’un très grand nombre d’entreprises.
+
+
+                </p>
+                <h1>Qu’est-ce que le référencement naturel SEO</h1>
+                <p>Qu’est-ce que le SEO ?
+
+                    SEO est l’abréviation de Search Engine Optimization. Il s’agit du processus d’optimisation de votre site Web afin qu’il soit mieux classé dans les résultats des moteurs de recherche (SERP) lorsqu’une personne recherche un mot clé lié à votre site Web.</p>
+                
+                <h3><b>Les types de référencement naturel</b></h3>
+                <p>Il existe plusieurs types de référencement :
+
+                    On-page SEO
+                    Ce type de SEO se concentre sur le contenu et la structure de votre page. Vous devez vous assurer que vous utilisez des mots-clés que les gens sont susceptibles de rechercher et qu’ils sont placés aux endroits où ils seront les plus visibles sur la page.
+                    
+                    Référencement Off-page
+                    Ce type de référencement se concentre sur les liens qui pointent vers votre site web, comme ceux des médias sociaux ou d’autres sites web. Plus il y a de liens de qualité pointant vers votre site, plus vous avez de chances d’être bien classé dans les moteurs de recherche.
+                    
+                    Référencement local
+                    Les entreprises locales ont souvent du mal à obtenir un classement élevé de leur site dans les recherches locales, car la concurrence n’est pas encore assez forte (il n’y a donc pas beaucoup de sites Web qui parlent d’elles). L’optimisation des moteurs de recherche locaux peut aider à résoudre ce problème en veillant à ce que toutes les informations relatives à votre entreprise soient correctes et facilement accessibles en ligne</p>
+                <h3><b>En quoi consiste ce métier ?</b></h3>
+                <p>La formation en SEO au Cameroun est un excellent moyen de mettre un pied dans la porte en tant que professionnel du marketing numérique. Vous apprendrez à trouver et à utiliser des mots clés qui vous aideront à être mieux classé sur les moteurs de recherche comme Google, Bing et Yahoo.
+                </p>
+                <h3><b>Les principes de base du référencement naturel</b></h3>
+                <p>Le référencement naturel est un moyen très efficace d’obtenir un meilleur classement de votre contenu dans les moteurs de recherche. Les principes de base du référencement naturel sont les suivants</p>
+                Rédiger un contenu de haute qualité qui apporte de la valeur au lecteur
+                Utilisez les mots-clés de manière appropriée et naturelle dans votre contenu
+                Incluez des liens vers d’autres articles ou pages de votre propre site Web qui sont pertinents pour le sujet traité.
+                Créez des liens vers d’autres sites Web qui fournissent des informations utiles sur le sujet que vous abordez dans votre article.  
+               </div>
+     
+            <h3><b>Pourquoi vous former en référencement naturel SEO au Cameroun
+            </b></h3>
+               <p><ul>Que souhaitez juste suivre une formation afin d’améliorer la visibilité de votre site web, ou que vous voulez faire du référencement naturel votre métier, voici 4 bonnes raisons de suivre une formation en référencement naturel SEO au Cameroun.
+
+                <li>Avoir toutes les cartes en main pour faire décoller vos sites internet</li> 
+                Si vous avez un site web qui a du mal à se positionner dans les résultats des moteurs de recherche (SERP), une formation en référencement naturel vous aidera à combler cette lacune. Vous apprendrez comment rendre votre coquin au yeux de Google et par ricochet généré plus de bénéfices si vous possédez une boutique en ligne.
+                
+                <li>L’accessibilité des formations en référencement naturel</li>
+                Il existe des cours de SEO pour tous les publics : salariés, étudiants, demandeurs d’emploi, chef d’entreprise, webmaster, etc. Mais le gros avantage des formations en référencement naturel étant qu’elles ne nécessitent pas de prérequis particuliers : tout le monde ou presque peut y accéder.
+                
+                <li>Le SEO, un investissement durable (et gratuit) !</li> 
+                Quand on parle d’investissement durable, sachez le référencement naturel d’un site web demande du temps. Il est utilise d’espérer être d’un seul coup en première page des moteurs de recherche sur certains mots clés après avoir effectuer le référencement de votre site il y a 3 jours. C’est investissement qui porte ses fruits à long terme et non sur le court terme.
+                
+                Le SEO est gratuit. C’est-à-dire que vous ne payez pas un centime pour la visibilité sur les moteurs de recherche contrairement au SEA qui sont des annonces payantes de Google Ad ou tout autres régies publicitaire.
+                
+                 <li>Une compétence très recherchée dans le domaine du marketing digital</li>
+                Un spécialiste du référencement naturel est l’épine dorsale de tout projet web. Que vous créer votre site ou que vous développez votre application, vous avez besoin tôt ou tard d’un spécialiste en référencement naturel pour accroître la visibilité de vos contenu sur le web.
+                
+                Les recruteurs du digital (et d’ailleurs) s’arrachent les profils ayant une certaine maîtrise du SEO. Une étude de Microsoft classe le SEO comme la compétence marketing la plus importante de l’année 2020. Nul doute que ce savoir-faire restera prisé dans les années à venir étant donné la rentabilité de ce levier du marketing digital.
+                  	
+               </ul>
+                  </p>
+ 
+               <h3><b>MÉTHODE PÉDAGOGIQUE POUR CETTE FORMATION</b></h3>
+               <p>
+                  La formation repose sur une approche pédagogique active et participative. Les apprenants sont mis en situation réelle tout au long de la formation, afin de leur permettre de développer leurs compétences et d’acquérir une expérience pratique.
+                  Les méthodes pédagogiques utilisées sont les suivantes :
+                  <ul>La formation repose sur une approche pédagogique active et participative. Les apprenants sont mis en situation réelle tout au long de la formation, afin de leur permettre de développer leurs compétences et d’acquérir une expérience pratique.
+                     Les méthodes pédagogiques utilisées sont les suivantes :
+                     <li>La pédagogie par projet : les apprenants sont invités à réaliser un projet concret, qui leur permet de mettre en pratique les notions apprises. Ce projet peut être réalisé pour une entreprise réelle, une association ou un projet personnel.</li>
+                     <li>L’apprentissage par l’action : les apprenants sont invités à participer à des activités et des exercices qui leur permettent d’acquérir des compétences et des connaissances de manière active.</li>
+                     <li>Développer les compétences pratiques des apprenants : les apprenants sont amenés à mettre en pratique les notions apprises, ce qui leur permet de développer leurs compétences et de s’approprier les connaissances de manière plus efficace.</li>
+                     <li>Développer les compétences collaboratives des apprenants : les apprenants apprennent à travailler ensemble et à partager leurs connaissances et leurs expériences. Cette compétence est essentielle dans le monde du travail.</li>
+                     <li>Favoriser l’autonomie des apprenants : les apprenants sont invités à prendre l’initiative et à résoudre des problèmes par eux-mêmes. Cette approche les prépare à la réalité du monde professionnel.</li>
+                     
+                    
+                  </ul>
+       
+               </p>
+               <h3><b>CERTIFICATION PRATIQUE & DÉBOUCHÉS</b></h3>
+               <p> 
+               En cas de réussite à la formation (Note finale supérieure ou égale à 12/20), tout participant recevra une Attestation de réussite dans un premier temps, puis une Certification Pratique dans le domaine de formation, valable au Cameroun et à l’international.
+Les lauréats bénéficieront également d’un suivi post formation de trois (03) mois dont l’objectif sera de s’assurer qu’ils ont atteint leurs objectifs de formation, et de leur apporter une aide supplémentaire allant dans ce sens.
+
+            </p>
+            <h3><b>CONSTITUTION DU DOSSIER D’ADMISSION</b></h3>
+            <p>
+               <ol>
+                  <li>Photocopie du Dernier diplôme</li>
+                  <li>Photocopie de la CNI ou de l’Acte de Naissance</li>
+                  <li>Frais d’inscription de 15.000F</li>
+                  <li>Formulaire d’inscription dûment rempli (A Retirer au Centre)</li>
+               </ol>
+            </p>
+
+            <h3><b>PROCÉDURE D’INSCRIPTION</b></h3>
+            <p>Êtes-vous intéressé par la Formation ? Il y a encore quelques places disponibles pour la prochaine rentrée
+                  Voici comment procéder pour participer à nos Formations :<ol>
+               <li>Vous rendre au Centre cette semaine muni des Éléments du Dossier d’Admission</li> 
+               <li>Proceder à votre inscription au Secretariat du Centre</li>
+               <li> Retirer votre reçu d’inscription</li>
+               
+            </ol>
+               
+            </p>
+            <h3><b>INSCRIPTION À DISTANCE POSSIBLE</b></h3>
+            <p>Vous pouvez également vous inscrire à distance, pour garantir votre place, c’est très simple :
+                  <ol>
+
+                  
+                     <li>Vous faites le paiement de vos frais d’inscription sur les contacts du Centre (694137315 / 671342262)</li>
+                     <li>Vous laissez un message sur WhatsApp (237694137315) avec votre nom complet et la formation choisie</li>
+                     <li>Vous recevrez une photo de votre reçu, et pourrez le retirer quand vous serez au centre.
+                     </li>
+                     
+                  </ol>
+               
+            </p>
+            </div>
+         </section>
+         <footer class="container-fluid footer text-center p-2">
+            <p>@Copyright <span>Digital Academy</span></p>
+            <p class="terms"><a href="#">Privacy Policy</a> - <a href="#">Terms&Conditions</a></p>
+            </footer>
+            <script>
+            let btn = document.querySelector('#menu-btn');
+      
+            btn.onclick = function() {
+      
+                const nav = document.querySelector('.nav');
+                const h1 = document.querySelector('#title');
+      
+                if(nav.style.opacity == 0){
+                    nav.style.opacity = 1;
+                    h1.style.opacity = 0;
+                } else {
+                    nav.style.opacity = 0;
+                    h1.style.opacity = 1;
+                };
+            }
+            </script>    
+   </body>
+</html>

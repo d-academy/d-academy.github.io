@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+      .body {
+         font-family:Arial,sans-serif;
+         font-size:17px;
+         line-height: 1.6;
+       }
+       
+      a {
+         text-decoration: none;
+         color: inherit;
+         font: inherit;
+         width: fit-content;
+      }
+
+      .wrapper {
+         background-color: #f8f5f5;
+         padding: 60px 0 33px; 
+         margin: 60px 0 33px;
+
+      }
+      .header {
+         font-family: 'Yeseva One', Verdana, sans-serif;
+         font-size: 60px;
+         line-height: 110%;
+         vertical-align: middle;
+         text-align: center;
+         background: linear-gradient(to right, #008cff, #DB545A);
+         -webkit-background-clip: text;
+         background-clip: text;
+         color: transparent;
+      }
+      
+      h1, .entry-content h1 {
+                   color: blue;
+                }
+
+      h3, .entry-content h3 {
+         color: blue;
+      }
+      
+      h4, .entry-content h4 {
+         color: blue;
+      }
+      .topbar {
+         background-color: rgb(103, 173, 200);
+         position: fixed;
+         top: 0;
+         left: 0;
+         right: 0;
+         height: 100px;
+         padding: 10px 0;
+         box-shadow: 10px 0 10px rgba(0, 0, 0, .5);
+         z-index: 3;
+      }
+
+      .logo {
+         font-size: 1.5rem;
+         font-weight: bold;
+         height: 33px;
+         float: left;
+         margin-left: 33px;
+      }
+
+      #menu-btn {
+         display: block;
+         position: absolute;
+         top: 66px;
+         right: 33px;
+         cursor: pointer;
+      }
+
+      .nav {
+         position: absolute;
+         display: flex;
+         flex-direction: column;
+         text-align: center;
+         list-style-type: none;
+         margin: 0 auto;
+         padding: 0 11px;
+         top: 124px;
+         left: calc(50% - 150px);
+         width: 300px;
+         opacity: 0;
+         transition: opacity 0.7s;
+      }
+
+      .nav a {    
+         font-size: 1rem;
+         text-decoration: none;
+         display: block;
+         width: auto;
+         border-radius: 23px;
+         margin: 3px 23px;
+         padding: 10px;
+         cursor: pointer;
+         color: #000;
+         background: rgb(103, 173, 200);
+      }
+
+      .nav a:hover{
+         transition: 0.5s;
+         background: rgb(152, 223, 253);
+         color: #ffffff;
+      }
+
+      .nav .active {
+         color: #fff;
+      }
+
+      .social {
+         position: absolute;
+         top: 17px;
+         right: 11px;
+      }
+
+      .LinkedIn, .Facebook, .x {
+         padding: 0 11px;
+         height: 25px;
+         width: auto;
+      }
+
+      .LinkedIn:hover, .Facebook:hover, .x:hover {
+         transform: scale(1.7)
+      }
+
+      footer {
+         font-family: 'Verdana';
+         font-style: normal;
+         font-weight: 400;
+         font-size: 23px;
+         height: auto;
+         background: #000;
+         color: white;
+         text-align: center;
+         box-shadow: 0 -1px 1em 3px rgba(0, 0, 0, .77);
+         box-sizing: border-box;
+      }
+
+      footer > p {
+         margin: 3px;
+         box-sizing: border-box;
+      }
+
+      span {
+         font-size: 27px;
+         font-weight: 500;
+         font-family: "Cardo", serif;
+         background: linear-gradient(to right, #008cff, #DB545A);
+         -webkit-background-clip: text;
+         background-clip: text;
+         color: transparent;
+         cursor: default;
+      }
+
+      .terms {
+         font-size: 17px;
+         padding: 3px;
+      }
+
+      .terms > a:hover {
+         text-decoration: underline;
+         color: #008cff;
+      }
+
+      @media only screen and (min-width: 992px) {
+          .topbar {
+            height: 100px;
+            display: flex;
+          }
+          #menu-btn {
+            display: none;
+          }
+          .nav {
+            top: inherit;
+            flex-direction: row;
+            width: calc(100% - 500px);
+            margin-block: 17px;
+            opacity: 1;
+          }
+          .nav a {
+            display: inline;
+            margin-inline: 9px;
+          } 
+          .nav a:hover{
+            border-radius: 23px;
+          }
+          .social {
+            top: 29px;
+          }
+          .LinkedIn, .Facebook, .x {
+            padding: 0 13px;
+            height: 25px;
+            width: auto;
+          }
+      }
+      @media only screen and (max-width: 576px) {
+         .topbar {height: 75px;}
+         .logo img {width: 75%;}
+         .social {display: none;}
+         #menu-btn{top: 19px;}
+         .nav {top: 77px;}
+         footer {
+            font-size: 23px;
+            line-height: 150%;
+         }
+         span {font-size: 27px;}
+         .terms > a:hover {
+            text-decoration: underline;
+            color: #008cff;
+         }
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Yeseva+One&display=swap" rel="stylesheet">
+    <title>Community Management</title>
+   </head>
+   <body>
+      <header class="container-fluid topbar">
+         <div class="logo">
+             <a href="index.html"><img src="img/13554290.png" alt="Logo"/></a>
+         </div>
+         <nav>
+             <div id="menu-btn"><img src="img/menu-btn.svg" height="33px"></div>
+             <ul class="nav">
+                 <li><a href="#courses" class="active">Formations</a></li>
+                 <li><a href="#services">Services</a></li>
+                 <li><a href="InscriptionForm.php">Sign In / Log In</a></li>
+                 <li><a href="#">Contact</a></li>
+                 <li><a href="AboutUs.html">About Us</a></li>
+             </ul>
+         </nav>
+         <div class="social">
+             <a href="#" title="LinkedIn" target="_blank"><img src="img/in.png" class="LinkedIn" title="LinkedIn"></a>
+             <a href="#" title="Facebook" target="_blank"><img src="img/fcb.png" class="Facebook"
+             title="Facebook"></a>
+             <a href="#" title="X" target="_blank"><img src="img/X.png" class="x" title="X"></a>
+        </div>
+     </header>
+      <section id="wrapper">
+         <div class="wrapper">
+            <h1 class="header"><b>Community Management</b></h1>
+            <p>Le community manager fait partie des nouveaux métiers du web et du marketing digital. Il est très populaire auprès des nouvelles générations et indispensable pour les entreprises. 
+
+                Sa mission est de fédérer les internautes autour de pôles d’intérêt. Il anime et apporte des informations aux membres de la communauté afin de développer la présence d’une marque sur internet. Son rôle est de prendre soin de l’image de marque de l’entreprise dont il s’occupe, notamment sur les réseaux sociaux aussi bien grand public que professionnels. 
+                </p>
+                <h1>En quoi consiste le métier de community manager ?</h1>
+                <p>Le community manager est chargé d’assurer la présence d’une marque ou d’une société sur les réseaux. Son objectif est de créer une communauté d’internautes, veiller aux commentaires, entretenir une relation avec les clients via la toile, mais aussi diffuser les messages clés de l’entreprise en utilisant les réseaux sociaux. Il participe à la stratégie marketing de communication d’une entreprise en misant sur l’interactivité avec le public. 
+
+                    Ce nouveau métier de la communication profite de piloter divers moyens d’action dans sa stratégie digitale. C’est un animateur de communauté sur le web.</p>
+                
+                
+                <p>Son rôle est de : 
+                    <ul>
+                    <li>lancer une conversation</li>
+                    <li> participer et modérer un débat</li>
+                    <li>accorder des promotions aux abonnés sur les réseaux sociaux</li>
+                    <li>proposer des concours ou des rencontres</li>
+                   
+                </ul>
+                Le but, c’est de fidéliser un maximum la communauté sur les différents réseaux qu’il anime. Pour cela, il doit mettre en place diverses stratégies digitales sur chaque réseau. Enfin, il doit appliquer les règles de bonne conduite au sein de sa communauté : protection des données des utilisateurs, respect de la Nétiquette, etc.
+            </p>
+                <h3><b>Quelles sont les missions du community manager ? </b></h3>
+                <p>
+                    Le community manager doit avant tout développer la notoriété d’une marque sur le web. Pour cela il participe à la création des valeurs de la communauté, définit les objectifs de la communauté avec une équipe composée d’un responsable marketing, d’un chef de projet web, d’un rédacteur web, d’un traffic manager et d’un référenceur.
+
+Il gère l’historique et l’archivage des données et assure la fidélisation des internautes via des évènements on-line (newsletters, jeux-concours…).
+
+Enfin il a aussi pour rôle d’accompagner le développement technique et fonctionnel de la plateforme. Cela passe par une veille des conditions d’utilisation du site, le signalement de bugs des fonctionnalités qui pourraient apparaitre, le développement d’une stratégie de communication, l’analyse du e-marketing communication et du e-business, le suivi des audiences…
+
+Parmi ses tâches les plus courantes, on peut notamment citer l’animation des comptes, la rédaction, la production de photos ou d’images, l’analyse des résultats, la veille sur la marque et la relation client. </p>    
+               </div>
+      </section>
+      <section id="pub">
+         <div class="pub">
+            <h3><b>Quelles formations pour devenir community manager ?</b></h3>
+            <p>Comment devenir community manager ? Différents cursus proposés dans les écoles de communication, à l’université ou dans une école du web permettent de se former.
+                D’après l’enquête 2021 du BDM au sujet des community managers en France, plus d’un CM sur deux a un diplôme équivalent à un bac+5 et 90 % d’entre eux ont au moins un bac+3. Parmi les 853 community managers interrogés par le média des professionnels du digital, 42 % ont suivi des études en école privée, 31 % à en faculté universitaire et 23 % ont alterné entre les deux.   </p>
+              
+               <h1><b>Dans quelles structures travaille un community manager ?</b></h1>
+               <p>
+                Le community manager peut travailler dans de grandes entreprises, des agences de communication et de agences de publicité, des agences web, des studios de jeux vidéo ou encore auprès de sociétés pureplayer ou souhaitant développer leur présence sur le net.
+
+                D’après le BDM, les community manager sont surtout présents au sein de petites ou moyennes structure. En effet, parmi les professionnels sondés par le média, 51 % exercent leurs fonctions au sein d’une PME (Petite ou Moyenne Entreprise), 22 % en TPE (Très Petite Entreprise), 20 % en ETI (Entreprise de Taille Intermédiaire) et seulement 7 % dans une grande entreprise. Non seulement le community manager travaille dans des structures plutôt petites ou moyennes, mais dans 67 % des cas, il est le seul CM de son entreprise. 
+                
+                Selon la même enquête, 55 % des community managers travaillent chez l’annonceur, en entreprise privée, 21 % en agence de communication et 15 % en institution publique. Au sein de leur entreprise, plus de la moitié des CM est rattachée au service de communication et plus 1 sur 5 au service marketing. 
+       
+               </p>
+               <h1><b>CERTIFICATION PRATIQUE & DÉBOUCHÉS</b></h1>
+               <p> 
+               En cas de réussite à la formation (Note finale supérieure ou égale à 12/20), tout participant recevra une Attestation de réussite dans un premier temps, puis une Certification Pratique dans le domaine de formation, valable au Cameroun et à l’international.
+Les lauréats bénéficieront également d’un suivi post formation de trois (03) mois dont l’objectif sera de s’assurer qu’ils ont atteint leurs objectifs de formation, et de leur apporter une aide supplémentaire allant dans ce sens.
+
+            </p>
+            <h1><b>CONSTITUTION DU DOSSIER D’ADMISSION</b></h1>
+            <p>
+               <ol>
+                  <li>Photocopie du Dernier diplôme</li>
+                  <li>Photocopie de la CNI ou de l’Acte de Naissance</li>
+                  <li>Frais d’inscription de 15.000F</li>
+                  <li>Formulaire d’inscription dûment rempli (A Retirer au Centre)</li>
+               </ol>
+            </p>
+
+            <h1><b>PROCÉDURE D’INSCRIPTION</b></h1>
+            <p>Êtes-vous intéressé par la Formation ? Il y a encore quelques places disponibles pour la prochaine rentrée
+                  Voici comment procéder pour participer à nos Formations :<ol>
+               <li>Vous rendre au Centre cette semaine muni des Éléments du Dossier d’Admission</li> 
+               <li>Proceder à votre inscription au Secretariat du Centre</li>
+               <li> Retirer votre reçu d’inscription</li>
+               
+            </ol>
+               
+            </p>
+            <h1><b>INSCRIPTION À DISTANCE POSSIBLE</b></h1>
+            <p>Vous pouvez également vous inscrire à distance, pour garantir votre place, c’est très simple :
+                  <ol>
+
+                  
+                     <li>Vous faites le paiement de vos frais d’inscription sur les contacts du Centre (694137315 / 671342262)</li>
+                     <li>Vous laissez un message sur WhatsApp (237694137315) avec votre nom complet et la formation choisie</li>
+                     <li>Vous recevrez une photo de votre reçu, et pourrez le retirer quand vous serez au centre.
+                     </li>
+                     
+                  </ol>
+               
+            </p>
+            </div>
+      </section>
+      <footer class="container-fluid footer text-center p-2">
+         <p>@Copyright <span>Digital Academy</span></p>
+         <p class="terms"><a href="#">Privacy Policy</a> - <a href="#">Terms&Conditions</a></p>
+      </footer>
+      <script>
+         let btn = document.querySelector('#menu-btn');
+   
+         btn.onclick = function() {
+   
+             const nav = document.querySelector('.nav');
+             const h1 = document.querySelector('#title');
+   
+             if(nav.style.opacity == 0){
+                 nav.style.opacity = 1;
+                 h1.style.opacity = 0;
+             } else {
+                 nav.style.opacity = 0;
+                 h1.style.opacity = 1;
+             };
+         }
+      </script>
+   </body>
+</html>

@@ -1,0 +1,857 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font: inherit;
+    width: fit-content;
+}
+
+.topbar {
+    background-color: rgb(103, 173, 200);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 123px;
+    padding: 10px 0;
+    box-shadow: 10px 0 10px rgba(0, 0, 0, .5);
+    z-index: 3;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 33px;
+    float: left;
+    margin-left: 33px;
+}
+
+#menu-btn {
+    display: block;
+    position: absolute;
+    top: 66px;
+    right: 33px;
+    cursor: pointer;
+}
+
+.nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0 11px;
+    top: 124px;
+    left: calc(50% - 150px);
+    width: 300px;
+    opacity: 0;
+    transition: opacity 0.7s;
+}
+
+.nav a {    
+    font-size: 1rem;
+    text-decoration: none;
+    display: block;
+    width: auto;
+    border-radius: 23px;
+    margin: 3px 23px;
+    padding: 10px;
+    cursor: pointer;
+    color: #000;
+    background: rgb(103, 173, 200);
+}
+
+.nav a:hover{
+    transition: 0.5s;
+    background: rgb(152, 223, 253);
+    color: #ffffff;
+}
+
+.nav .active {
+    color: #fff;
+}
+
+.social {
+    position: absolute;
+    top: 17px;
+    right: 11px;
+}
+
+.LinkedIn, .Facebook, .x {
+    padding: 0 11px;
+    height: 25px;
+    width: auto;
+}
+
+.LinkedIn:hover, .Facebook:hover, .x:hover {
+    transform: scale(1.7)
+}
+
+.main {
+    margin-top: 123px;
+}
+
+#intro {
+    height: 821px;
+}
+
+.h1 {
+    font-family: 'Yeseva One', Verdana, sans-serif;
+    font-size: 60px;
+    position: relative;
+    top: 23px;
+    left: calc(50% - 200px);
+    width: 400px;
+    height: 150px;
+    line-height: 110%;
+    vertical-align: middle;
+    text-align: center;
+    background: linear-gradient(to right, #008cff, #DB545A);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#title > p {
+    position: relative;
+    top: 13px;
+    left: calc(50% - 200px);
+    width: 400px;
+    height: 150px;
+    line-height: 180%;
+    text-align: center;
+}
+
+.btn {
+    font-family: "Cardo", Verdana, sans-serif;
+    font-size: 1.3rem;
+    display: inline-block;
+    width: 200px;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(to right, #008cff, #DB545A);
+    border-radius: 23px;
+    padding: 10px 20px;
+    position: absolute;
+    left: calc(50% - 100px);
+    top: 444px;
+}
+
+.btn:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
+    background: linear-gradient(to right, #DB545A, #008cff);
+}
+
+#ellipse {
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    position: absolute;
+    top: 570px;
+    right: calc(50% - 175px);
+    background: center center / cover url("img/jj.jpg");
+    margin: auto;
+}
+
+#woman {
+    z-index: 2;
+    width: 300px;
+    height: 444px;
+    position: absolute;
+    top: 500px;
+    right: calc(50% - 150px);
+    background: center center / cover url("img/woman.png");
+}
+
+#courses {
+    background: linear-gradient(to right, #008cff, #DB545A);
+}
+
+.h2 {
+    font-family: "Yeseva one", Verdana, sans-serif;
+    font-size: 48px;
+    line-height: 110%;
+    text-align: center;
+    padding-block: 17px;
+}
+
+#course {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+.course {
+    width: 95%;
+    height: 300px;
+    text-align: center;
+    background: rgba(18, 18, 18, .44);
+    margin: 11px 11px;
+}
+
+.course h2 {
+    font-family: "Cardo", serif;
+    font-weight: 700;
+    font-size: 33px;
+    width: 100%;
+    text-align: start;
+    margin-bottom: 10px;
+}
+
+.course h2:hover {
+    text-decoration: underline;
+}
+
+.course p {
+    font-size: 19px;
+    font-style: italic;
+    color: #000;
+    line-height: 150%;
+    text-align: start;
+}
+
+section > .h1 {
+    margin-bottom: 13px;
+    height: 100px;
+    display: block;
+}
+
+#service {
+    background: linear-gradient(135deg, #f0e68c, #f08080, #dda0dd);
+    color: #000;
+    border-radius: 11px;
+    padding: 20px;
+    margin-bottom: 13px;
+    position: relative;
+    min-height: 250px;
+}
+
+#h4 > a {
+    display: block;
+    font-family: "Cardo", serif;
+    font-weight: bold;
+    font-size: 23px;
+    margin-bottom: 10px;
+    text-align: center;    
+    color: #000;
+}
+
+#h4 > a:hover {
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
+#arrow {
+    width: 50px;
+    height: 50px;
+    position: sticky;
+    background: center / cover url(img/arrow.png);
+    position: absolute;
+    bottom: 23px;
+    right: 23px;
+}
+
+#arrow:hover {
+    transition: 333ms;
+    transform: scale(1.2);
+}
+
+#testimonials {
+    background: no-repeat center bottom / cover url(img/uyy.jpg);
+    padding: 33px;
+}
+
+#testimonial {
+    background: linear-gradient(to bottom, rgba(221, 160, 221, 0.4), rgba(255, 255, 255, 0.7));
+    border-radius: 10px;
+    padding: 20px;
+    margin: 11px;
+    min-width: 200px;
+    max-height: 330px;
+    position: relative;
+}
+
+#testimonial .h4 {
+    font-family: "Cardo", serif;
+    font-weight: bold;
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 120%;
+    color: #DB545A;
+}
+
+.quotes {
+    background: no-repeat center / cover url("img/double-quote.svg");
+    width: 23px;
+    height:23px;
+    position: absolute;
+    bottom: 11px;
+    left: calc(50% - 12px);
+}
+
+#qlty {
+    background: linear-gradient(to bottom, #FEF6F4, white);
+    color: black;
+    height: auto;
+}
+
+.more-comments, .learn-more {
+    font-size: 23px;
+    font-family: "Cardo", Verdana, serif;
+    border: none;
+    border-radius: 23px;
+    color: black;
+    cursor: pointer;
+    padding: 10px 20px;
+    width: 200px;
+    height: 69px;
+    margin-inline: auto;
+}
+
+.more-comments {
+    background-color: rgba(255, 85, 156, 0.33);
+    margin-block: 17px;
+    font-size: 19px;
+    padding: 0;
+}
+
+.learn-more {
+    background: linear-gradient(to right, rgba(255, 106, 153, 0.66), rgba(255, 156, 199, 0.66));
+    margin-block: 17px;
+}
+
+.learn-more:hover, .more-comments:hover {
+    transition: 333ms;
+    transform: scale(1.1);
+}
+
+.square {
+    width: 250px;
+    height: 200px;
+    margin-block: 17px;
+    padding: 33px;
+    border-radius: 23px;
+    cursor: grab;
+}
+
+#square1 {
+    background: center / cover url("img/fa697d4c-bbff-e31e-390c-05d828d2138f.jpg");
+}
+
+#square2 {
+    background: center / cover url("img/46c4bb3d-c46b-8792-6fa7-a8099501f9e4.jpg");
+}
+
+#square3 {
+    background: center / cover url("img/867d5c5e-264f-ba2a-9890-d0e837b58c8b.jpg");
+}
+
+#h3 {
+    font-family: 'Yeseva One', Verdana, Tahoma, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 120%;
+    color: #FFFFFF;
+}
+
+#h6 {
+    font-family: 'Cardo', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 120%;
+    color: #000000;
+}
+
+footer {
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    height: 100px;
+    line-height: 150%;
+    box-shadow: 0 -1px 1em 3px rgba(0, 0, 0, .77);
+}
+
+span {
+    font-size: 27px;
+    font-weight: 500;
+    font-family: "Cardo", serif;
+    background: linear-gradient(to right, #008cff, #DB545A);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    cursor: default;
+}
+
+.terms {
+    height: 26px;
+    font-size: 17px;
+}
+
+.terms > a:hover {
+    text-decoration: underline;
+    color: #008cff;
+}
+
+
+
+
+.login {
+    margin: 150px auto;
+    width: 90%;
+    background: center / cover fixed url('img/49bc575a3c1661a77bb002d93636e86e.jpg');
+    color: black;
+    border-radius: 25px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.75);
+    overflow: hidden;
+}
+
+#form {
+    display: block;
+    box-sizing: border-box;
+    padding: 33px;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: brightness(50%);
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+#form h1 {
+    font-weight: 500;
+    font-family: "Yeseva one", Verdana, Tahoma, sans-serif;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 11px;
+    background: linear-gradient(to right, #008cff, #DB545A);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    cursor: default;
+}
+
+#form label {
+    font-family: 'Cardo', serif;
+    color: rgba(0, 0, 0, 0.9);
+    text-transform: uppercase;
+    font-size: 19px;
+    letter-spacing: 3px;
+}
+
+#form input {
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    height: 50px;
+    line-height: 33px;
+    border-radius: 23px;
+    padding: 2px 25px;
+    border: none;
+    margin-bottom: 25px;
+    color: white;
+    outline: none;
+}
+
+#form input:focus { 
+    border-color: rgba(32, 131, 207, 0.75); 
+    -moz-box-shadow: 0 0 11px rgba(82, 168, 236, 0.5); 
+    -webkit-box-shadow: 0 0 11px rgba(82, 168, 236, 0.5); 
+    box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+}
+#form .correct { 
+    border-color: rgba(68, 191, 68, 0.75); 
+} 
+    
+#form .correct:focus { 
+    border-color: rgba(68, 191, 68, 0.75); 
+    -moz-box-shadow: 0 0 8px rgba(68, 191, 68, 0.5); 
+    -webkit-box-shadow: 0 0 8px rgba(68, 191, 68, 0.5); 
+    box-shadow: 0 0 8px rgba(68, 191, 68, 0.5); 
+} 
+    
+#form .incorrect { 
+    border-color: rgba(191, 68, 68, 0.75); 
+} 
+    
+#form .incorrect:focus { 
+    border-color: rgba(191, 68, 68, 0.75); 
+    -moz-box-shadow: 0 0 8px rgba(191, 68, 68, 0.5); 
+    -webkit-box-shadow: 0 0 8px rgba(191, 68, 68, 0.5); 
+    box-shadow: 0 0 8px rgba(191, 68, 68, 0.5); 
+} 
+
+#form div {
+    display: flex;
+    flex-direction: column;
+}
+
+#form div:not(:last-child) {
+    margin-bottom: 11px;
+}
+
+#form .formation input,#form .typecours input {
+    margin: 7px;
+    height:auto;
+}
+
+#form .formation label:not(:first-child),#form .typecours label:not(:first-child){
+    text-transform: none;
+}
+
+#form .session select {
+    text-align: center;
+    font-family: 'Cardo';
+    background: transparent;
+    color: white;
+    height: 33px;
+    font-size: 19px;
+}
+
+#form .session option{
+    color: black;
+}
+
+#form .submit button {
+    width: 100%;
+    text-align: center;
+    height: auto;
+    background: linear-gradient(to right, #008cff, #DB545A);
+}
+
+.submit button {
+    line-height: 40px;
+    border-radius: 40px;
+    border: none;
+    margin: 10px 0px;
+    padding: 13px;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 17px;
+    text-transform: uppercase;
+}
+
+#form .submit button:hover {
+    transform: scale(1.1);
+    transition: 333ms;
+    background: linear-gradient(to left, #008cff, #DB545A);
+}
+
+
+
+.titreform {
+    font-family: 'Yeseva One', Verdana, sans-serif;
+    font-size: 50px;
+    position: relative;
+    width: 95%;
+    text-align: center;
+    background: linear-gradient(to right, #008cff, #DB545A);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 13px auto;
+}
+
+.subtitle {
+    font-family: 'Yeseva One', Verdana, sans-serif;
+    font-size: 33px;
+    position: relative;
+    width: 95%;
+    text-align: center;
+    color:  #008cff;
+    margin: 13px auto;
+}
+
+.article {
+    margin-inline: 11px;
+    font-family: 'Cardo', Verdana, Tahoma, sans-serif;
+    font-size: 19px;
+}
+
+.article span, .article em{
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.ulist, #pub ol {
+    margin-inline: 13px;
+    font-size: 1.1rem;
+}
+
+#pub {
+    background: white;
+    box-shadow: inset 1px 3px 3px rgba(0, 0, 0, .77);
+    color: black;
+    padding-bottom: 7px;
+}
+
+
+
+@media only screen and (min-width: 1400px) {
+    .course { max-width: 400px; }
+}
+
+@media only screen and (min-width: 1200px) {
+    #courses {
+        padding-inline: 100px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .topbar {
+        height: 100px;
+        display: flex;
+    }
+    #menu-btn {
+        display: none;
+    }
+    .nav {
+        top: inherit;
+        flex-direction: row;
+        width: calc(100% - 500px);
+        margin-block: 17px;
+        opacity: 1;
+    }
+    .nav a {
+        display: inline;
+        margin-inline: 9px;
+    } 
+    .nav a:hover{
+        border-radius: 23px;
+    }
+    .social {
+        top: 29px;
+    }
+    .LinkedIn, .Facebook, .x {
+        padding: 0 13px;
+        height: 25px;
+        width: auto;
+    }
+    #intro {
+        height: 388px;
+    }
+    #title .h1 {
+        top: 0;
+    }
+    #title > p {
+        top: 13px;
+        font-size: 1.1rem;
+    }
+    .btn {
+        position: absolute;
+        left: calc(25% - 55px);
+    }
+    #ellipse {
+        width: 360px;
+        height: 360px;
+        top: 150px;
+        right: calc(25% - 180px);
+    }
+    #woman{
+        width: 333px;
+        height: 400px;
+        top: 111px;
+        right: calc(25% - 167px);
+    }
+    #testimonial {
+        min-height: 300px;
+    }
+    .quotes {
+        bottom: 23px;
+    }
+    #pub {margin-block: auto;}
+    .login {margin-top: 123px;}
+    #form .submit button:hover {transform: scale(1.05);}
+    .article {margin-inline: 50px;}
+    .ulist {margin-inline-start: 123px;}
+    #pub ol {margin-left: 77px;}
+}
+
+@media only screen and (min-width: 768px) {
+    #course {grid-template-columns: 1fr 1fr 1fr;}
+    #testimonial, #service {
+        width: calc(33% - 23px);
+    }
+    .more-comments {
+        font-size: 23px;
+        padding: 10px 20px;
+    }
+    #form h1 {
+        font-weight: 700;
+        font-size: 77px;
+    }
+    #form label {
+        font-size: 23px;
+    }    
+}
+
+@media only screen and (max-width: 576px) {
+    .topbar {height: 75px;}
+    .logo img {width: 75%;}
+    .social {display: none;}
+    #menu-btn{top: 19px;}
+    .nav {top: 77px;}
+    .main {margin-top: 63px;}
+    #intro {height: 694px;}    
+    #title .h1{font-size: 50px;}
+    #title > p {
+        top: -7px;
+        left: calc(50% - 150px);
+        width: 300px;
+        line-height: 150%;
+    }
+    .btn {
+        font-size: 1.1rem;
+        width: 150px;
+        padding: 7px 13px;
+        left: calc(50% - 75px);
+        top: 369px;
+    }
+    #ellipse {
+        width: 270px;
+        height: 270px;
+        top: 480px;
+        right: calc(50% - 133px);
+    }
+    #woman {
+        width: 256px;
+        height: 333px;
+        top: 424px;
+        right: calc(50% - 128px);
+    }
+    .h2 {
+        font-size: 29px;
+        padding-block: 11px;
+    }
+    #courses .row{justify-content: center;}
+    #course {grid-template-columns: auto;}
+    .course {
+        max-width: 333px;
+        height: 222px;
+        padding-inline: 11px;
+        margin-inline: auto;
+    }
+    .course h2 {
+        font-size: 25px;
+        margin-bottom: 7px;
+        text-align: center;
+    }
+    .course p {font-size: 15px;}
+    section > .h1 {
+        font-size: 44px;
+        height: 50px;
+    }
+    #services .row {
+        justify-content: center;
+        margin-top: 33px;
+    }
+    #service {
+        width: 80%;
+        height: 250px;
+        margin-inline: auto;
+    }
+    #h4 > a:hover {text-decoration: underline;}
+    #service p {font-size: 15px;}
+    #arrow {
+        width: 44px;
+        height: 44px;
+        bottom: 11px
+    }
+    #testimonials {
+        padding: 19px;
+    }
+    #testimonial {
+        padding: 17px;
+        margin: 11px auto;
+        width: 90%;
+        height: 300px;
+        position: relative;
+    }
+    #testimonial .h4 {
+        margin-top: 7px;
+        font-size: 23px;
+        line-height: 110%;
+        text-align: center;
+    }
+    #testimonial p {font-size: 15px;}
+    .quotes {bottom: 17px;}
+    .more-comments, .learn-more {
+        font-size: 17px;
+        padding: 10px 7px;
+        width: 169px;
+        height: 50px;
+    }
+    .learn-more {margin-block: 17px;}
+    #qlty {overflow: hidden;}
+    .square {
+        width: 200px;
+        height: 200px;
+        margin-inline: auto;
+        text-align: center;
+    }
+    #h3 {
+        font-size: 50px;
+        margin-block: 17px;
+        line-height: 110%;
+    }
+    #h6 {
+        font-size: 23px;
+        line-height: 100%;
+    }
+    footer {
+        font-size: 23px;
+        line-height: 150%;
+    }
+    span {font-size: 27px;}
+    .terms {
+        height: 26px;
+        font-size: 17px;
+    }
+    .terms > a:hover {
+        text-decoration: underline;
+        color: #008cff;
+    }
+    .login {
+        background: top / contain fixed url('img/49bc575a3c1661a77bb002d93636e86e.jpg');
+    }
+    #form h1 {font-size: 33px;}
+    #form label {
+        font-size: 17px; 
+        letter-spacing: normal;
+    }
+    #form input {height: 33px;}
+    .titreform {
+        top: 11px;
+        font-size: 33px;
+        width: 90%;
+    }
+    .subtitle {
+        font-size: 25px;
+        width: 93%;
+        margin: 11px auto;
+    }
+    .article {
+        margin-inline: 17px;
+        font-size: 17px;
+    }
+}
